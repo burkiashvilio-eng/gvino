@@ -14,17 +14,17 @@ export default function Home() {
   const [lang, setLang] = useState<Lang>('ka');
 
   return (
-    <>
+    <div className="site-wrapper">
       <TopBar />
       <LanguageBar current={lang} onChange={setLang} />
+      <LogoCircle />
       <div className="spacer" />
       <div className="page">
-        <LogoCircle />
         <Divider />
         <StoresSection lang={lang} />
         <SocialRow />
         <Footer />
       </div>
-    </>
+    </div>
   );
 }
