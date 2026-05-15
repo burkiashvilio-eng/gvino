@@ -2,7 +2,7 @@ export type Lang = 'ka' | 'en' | 'ru';
 
 export const translations = {
   langButton: {
-    ka: 'ქართ',
+    ka: 'ქარ',
     en: 'EN',
     ru: 'RU',
   },
