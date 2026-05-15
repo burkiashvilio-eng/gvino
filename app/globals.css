@@ -137,10 +137,10 @@ body {
 .brand-name {
   margin-top: 10px;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 10px;
-  font-weight: 400;
-  letter-spacing: 0.42em;
-  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.36em;
+  color: var(--wine);
   text-transform: uppercase;
   text-align: center;
 }
@@ -166,12 +166,14 @@ body {
 }
 .stores-label {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 11px;
-  letter-spacing: 0.42em;
-  color: var(--gold);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--wine);
   text-transform: uppercase;
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 6px 18px rgba(0,0,0,0.06);
 }
 .card {
   background: rgba(245, 240, 232, 0.88);
@@ -252,9 +254,11 @@ body {
 
 .footer-text {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 11px;
-  letter-spacing: 0.3em;
-  color: var(--muted);
-  opacity: 0.9;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.36em;
+  color: var(--wine);
+  opacity: 1;
   text-transform: uppercase;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.65);
 }
