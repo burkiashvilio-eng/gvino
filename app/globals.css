@@ -236,6 +236,11 @@ body {
 .social-link:hover .social-icon { background: var(--wine); border-color: var(--wine); color: #fff; }
 
 .footer { margin-top: 8px; text-align: center; }
+
+@media (min-width: 768px) {
+  .footer { margin-top: 80px; }
+}
+
 .footer-text {
   font-family: 'Cormorant Garamond', serif;
   font-size: 11px;
