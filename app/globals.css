@@ -208,7 +208,7 @@ body {
   line-height: 1.9;
 }
 
-.social-row { display: flex; gap: 18px; margin-top: 24px; }
+.social-row { display: flex; gap: 18px; margin-top: 90px; }
 .social-link {
   display: flex;
   align-items: center;
