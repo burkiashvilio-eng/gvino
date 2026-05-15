@@ -17,7 +17,7 @@ body {
   background-size: 100% auto;
   background-position: center top;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-color: #fff8f0;
 }
 
@@ -235,7 +235,7 @@ body {
 }
 .social-link:hover .social-icon { background: var(--wine); border-color: var(--wine); color: #fff; }
 
-.footer { margin-top: 32px; text-align: center; }
+.footer { margin-top: 8px; text-align: center; }
 .footer-text {
   font-family: 'Cormorant Garamond', serif;
   font-size: 11px;
