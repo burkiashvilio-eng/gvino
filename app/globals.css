@@ -147,6 +147,14 @@ body {
 .dl.r { background: linear-gradient(90deg, var(--gold), transparent); }
 
 .stores-section { width: min(400px, 92%); }
+.stores-section {
+  /* lift the stores card slightly on wider screens */
+  margin-top: 0;
+}
+
+@media (min-width: 768px) {
+  .stores-section { margin-top: -80px; }
+}
 .stores-label {
   font-family: 'Cormorant Garamond', serif;
   font-size: 11px;
@@ -163,6 +171,7 @@ body {
   padding: 24px 20px;
   text-align: center;
   position: relative;
+  z-index: 6;
   backdrop-filter: blur(10px);
 }
 .card::before {
