@@ -117,13 +117,13 @@ body {
   z-index: 2;
 }
 .logo-circle img {
-  width: 118%;
-  height: 118%;
+  width: 92%;
+  height: 92%;
   object-fit: cover;
-  object-position: 48% 28%;
-  mix-blend-mode: multiply;
-  filter: contrast(1.05) saturate(0.88);
+  object-position: center;
+  display: block;
   border-radius: 50%;
+  transition: transform 0.18s ease;
 }
 .brand-name {
   margin-top: 10px;
