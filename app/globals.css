@@ -153,7 +153,7 @@ body {
 }
 
 @media (min-width: 768px) {
-  .stores-section { margin-top: -180px; }
+  .stores-section { margin-top: -240px; }
 }
 .stores-label {
   font-family: 'Cormorant Garamond', serif;
