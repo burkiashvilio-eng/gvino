@@ -14,7 +14,7 @@ body {
   font-family: 'Jost', sans-serif;
   min-height: 100vh;
   background-image: url('/bg1.png');
-  background-size: 100% auto;
+  background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -24,7 +24,15 @@ body {
 @media (min-width: 768px) {
   body {
     background-image: url('/bg2.png');
-    background-size: 1599px 899px;
+    background-size: cover;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    background-image: url('/bg1-mobile.png');
+    background-size: cover;
+    background-position: center top;
   }
 }
 
