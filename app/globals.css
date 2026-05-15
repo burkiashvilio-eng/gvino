@@ -95,8 +95,8 @@ body {
   z-index: 5;
 }
 .logo-circle {
-  width: min(160px, 42vw);
-  height: min(160px, 42vw);
+  width: min(110px, 32vw);
+  height: min(110px, 32vw);
   border-radius: 50%;
   background: radial-gradient(circle, rgba(245, 240, 232, 0.7) 55%, rgba(245, 240, 232, 0) 100%);
   border: 1.5px solid rgba(184, 150, 46, 0.55);
@@ -153,7 +153,7 @@ body {
 }
 
 @media (min-width: 768px) {
-  .stores-section { margin-top: -80px; }
+  .stores-section { margin-top: -140px; }
 }
 .stores-label {
   font-family: 'Cormorant Garamond', serif;
