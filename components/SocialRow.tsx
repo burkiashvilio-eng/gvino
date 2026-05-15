@@ -1,7 +1,7 @@
 export default function SocialRow() {
   return (
     <div className="social-row">
-      <a href="https://instagram.com" className="social-link" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.instagram.com/burkiashvili_wine_cellar/" className="social-link" target="_blank" rel="noopener noreferrer">
         <div className="social-icon">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
             <rect x="2" y="2" width="20" height="20" rx="5" />
