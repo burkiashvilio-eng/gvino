@@ -30,7 +30,8 @@ body {
 
 @media (max-width: 767px) {
   body {
-    background-image: url('/bg1-mobile.png');
+    /* try mobile-specific image first, fall back to desktop bg1.png if missing */
+    background-image: url('/bg1-mobile.png'), url('/bg1.png');
     background-size: cover;
     background-position: center top;
   }
