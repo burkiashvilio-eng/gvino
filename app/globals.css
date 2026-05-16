@@ -238,26 +238,9 @@ body {
 
 .footer { margin-top: 8px; text-align: center; }
 
-.footer-box {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 16px;
-  border: 1px solid rgba(184, 150, 46, 0.35);
-  background: rgba(245, 240, 232, 0.94);
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(92, 26, 26, 0.08);
-  max-width: min(90vw, 420px);
-}
-
 @media (max-width: 767px) {
   .footer {
     margin-top: 28px;
-  }
-  .footer-box {
-    width: min(92vw, 320px);
-    padding: 10px 14px;
-    border-radius: 14px;
   }
   .footer-text {
     font-size: 10px;
