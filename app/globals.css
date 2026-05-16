@@ -8,7 +8,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { min-height: 100%; overflow-x: hidden; }
+html, body { min-height: 100%; overflow: hidden; }
 
 body {
   font-family: 'Jost', sans-serif;
@@ -92,6 +92,7 @@ body {
 .site-wrapper {
   position: relative;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 .logo-circle-wrap {
@@ -134,17 +135,6 @@ body {
   border-radius: 50%;
   transition: transform 0.18s ease;
 }
-.brand-name {
-  margin-top: 10px;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.36em;
-  color: var(--wine);
-  text-transform: uppercase;
-  text-align: center;
-}
-
 .divider {
   display: flex;
   align-items: center;
@@ -249,14 +239,43 @@ body {
 .footer { margin-top: 8px; text-align: center; }
 
 .footer-box {
-  display: inline-block;
-  padding: 12px 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
   border: 1px solid rgba(184, 150, 46, 0.35);
-  background: rgba(245, 240, 232, 0.92);
-  border-radius: 18px;
+  background: rgba(245, 240, 232, 0.94);
+  border-radius: 16px;
   box-shadow: 0 10px 30px rgba(92, 26, 26, 0.08);
+  max-width: min(90vw, 420px);
+}
+
+@media (max-width: 767px) {
+  .footer {
+    margin-top: 28px;
+  }
+  .footer-box {
+    width: min(92vw, 320px);
+    padding: 10px 14px;
+    border-radius: 14px;
+  }
+  .footer-text {
+    font-size: 10px;
+    letter-spacing: 0.28em;
+  }
 }
 
 @media (min-width: 768px) {
   .footer { margin-top: 200px; }
+}
+
+.footer-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.36em;
+  color: var(--wine);
+  opacity: 1;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.65);
 }
