@@ -103,18 +103,14 @@ body {
   flex-direction: column;
   align-items: center;
   z-index: 5;
-  padding: 7px;
-  background: rgba(0, 0, 0, 0.35);
-  border-radius: 999px;
-  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.18);
 }
 .logo-circle {
   width: min(90px, 28vw);
   height: min(90px, 28vw);
   border-radius: 50%;
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.05), 0 6px 20px rgba(0, 0, 0, 0.18);
+  background: #000;
+  border: 1.5px solid rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1), 0 6px 24px rgba(0, 0, 0, 0.16);
   overflow: hidden;
   position: relative;
   display: flex;
@@ -126,7 +122,7 @@ body {
   position: absolute;
   inset: 5px;
   border-radius: 50%;
-  border: 0.5px solid rgba(184, 150, 46, 0.15);
+  border: 0.5px solid rgba(184, 150, 46, 0.3);
   pointer-events: none;
   z-index: 2;
 }
@@ -138,18 +134,6 @@ body {
   display: block;
   border-radius: 50%;
   transition: transform 0.18s ease;
-}
-.logo-caption {
-  margin-top: 10px;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.22em;
-  color: #fff;
-  text-transform: uppercase;
-  text-align: center;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
-  max-width: min(100px, 26vw);
 }
 .divider {
   display: flex;
