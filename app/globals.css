@@ -248,17 +248,15 @@ body {
 
 .footer { margin-top: 8px; text-align: center; }
 
-@media (min-width: 768px) {
-  .footer { margin-top: 200px; }
+.footer-box {
+  display: inline-block;
+  padding: 12px 18px;
+  border: 1px solid rgba(184, 150, 46, 0.35);
+  background: rgba(245, 240, 232, 0.92);
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(92, 26, 26, 0.08);
 }
 
-.footer-text {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.36em;
-  color: var(--wine);
-  opacity: 1;
-  text-transform: uppercase;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.65);
+@media (min-width: 768px) {
+  .footer { margin-top: 200px; }
 }
