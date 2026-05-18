@@ -5,6 +5,10 @@
   --wine-mid: #7a2d2d;
   --gold:     #b8962e;
   --muted:    #8a7060;
+  /* skin-tone palette for logo circle */
+  --skin-light: #f4d6c2;
+  --skin-mid:   #e0b99b;
+  --skin-dark:  #c69578;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -108,9 +112,9 @@ body {
   width: min(90px, 28vw);
   height: min(90px, 28vw);
   border-radius: 50%;
-  background: #000;
-  border: 1.5px solid rgba(0, 0, 0, 0.7);
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1), 0 6px 24px rgba(0, 0, 0, 0.16);
+  background: linear-gradient(135deg, var(--skin-light), var(--skin-mid), var(--skin-dark));
+  border: 1.5px solid rgba(198, 149, 124, 0.6);
+  box-shadow: 0 0 0 3px rgba(198, 149, 124, 0.12), 0 6px 24px rgba(0, 0, 0, 0.12);
   overflow: hidden;
   position: relative;
   display: flex;
@@ -134,6 +138,19 @@ body {
   display: block;
   border-radius: 50%;
   transition: transform 0.18s ease;
+}
+.logo-circle-wrap .logo-label,
+.logo-circle-wrap .logo-title,
+.logo-circle-wrap .logo-text,
+.logo-circle-wrap p.logo-label,
+.logo-circle-wrap p.logo-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--wine);
+  margin-top: 6px;
+  transform: translateY(4px);
+  text-align: center;
 }
 .divider {
   display: flex;
