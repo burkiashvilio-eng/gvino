@@ -237,3 +237,160 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
+import type { Metadata } from 'next';
+import './globals.css';
+
+const BASE_URL = 'https://www.burkiashviliwinecellar.ge';
+
+const SEO = {
+  title: 'Burkiashvili Wine Cellar | Georgian Qvevri Wine',
+  ogTitle: 'Burkiashvili Wine Cellar | Georgian Qvevri Wine',
+  description:
+    'Burkiashvili Wine Cellar — authentic Georgian wine crafted in traditional qvevri clay vessels. Handcrafted Saperavi & Rkatsiteli from Kakheti, Georgia. Coming soon to stores near you.',
+  ogDescription:
+    'Handcrafted Georgian wine made in traditional qvevri clay vessels. Saperavi & Rkatsiteli from the heart of Kakheti.',
+  ogImage: '/og-image.jpg',
+  ogUrl: BASE_URL,
+  canonicalUrl: BASE_URL,
+};
+
+export const metadata: Metadata = {
+  metadataBase: new URL(BASE_URL),
+  title: {
+    default: SEO.title,
+    template: '%s | Burkiashvili Wine Cellar',
+  },
+  description: SEO.description,
+  keywords: [
+    'Burkiashvili wine cellar',
+    'Burkiashvili winery',
+    'ბურკიაშვილი ღვინის მარანი',
+    'Georgian wine',
+    'qvevri wine',
+    'Saperavi',
+    'Rkatsiteli',
+    'Kisi',
+    'ქართული ღვინო',
+    'ქვევრის ღვინო',
+    'грузинское вино',
+    'вино в квеври',
+  ],
+  alternates: {
+    canonical: SEO.canonicalUrl,
+    languages: {
+      ka: BASE_URL + '?lang=ka',
+      en: BASE_URL + '?lang=en',
+      ru: BASE_URL + '?lang=ru',
+      'x-default': BASE_URL,
+    },
+  },
+  openGraph: {
+    type: 'website',
+    url: SEO.ogUrl,
+    siteName: 'Burkiashvili Wine Cellar',
+    title: SEO.ogTitle,
+    description: SEO.ogDescription,
+    locale: 'ka_GE',
+    alternateLocale: ['en_US', 'ru_RU'],
+    images: [
+      {
+        url: SEO.ogImage,
+        width: 1200,
+        height: 630,
+        alt: 'Burkiashvili Wine Cellar — Georgian Qvevri Wine',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: SEO.ogTitle,
+    description: 'Authentic Georgian wine from traditional qvevri clay vessels. Saperavi, Rkatsiteli & more from Kakheti.',
+    images: [SEO.ogImage],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
+  verification: {
+    google: 'REPLACE_WITH_GOOGLE_SEARCH_CONSOLE_CODE',
+  },
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'LocalBusiness',
+      '@id': BASE_URL + '/#business',
+      name: 'Burkiashvili Wine Cellar',
+      url: BASE_URL,
+      image: BASE_URL + SEO.ogImage,
+      description: 'Traditional Georgian winery producing qvevri wines including Saperavi and Rkatsiteli from Kakheti region.',
+      address: {
+        '@type': 'PostalAddress',
+        addressCountry: 'GE',
+      },
+      knowsAbout: ['Georgian wine', 'Qvevri winemaking', 'Saperavi', 'Rkatsiteli'],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': BASE_URL + '/#website',
+      url: BASE_URL,
+      name: 'Burkiashvili Wine Cellar',
+      inLanguage: ['ka', 'en', 'ru'],
+      publisher: { '@id': BASE_URL + '/#business' },
+    },
+  ],
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="ka">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
+      <body>
+        <main>{children}</main>
+
+        <footer style={{ padding: '2.5rem 1rem', textAlign: 'center', borderTop: '1px solid #eaeaea', marginTop: '3rem' }}>
+          <h3 style={{ marginBottom: '1.2rem', color: '#333' }}>Our Wine is Available Here:</h3>
+          <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '14px', alignItems: 'center' }}>
+            <li>
+              <a 
+                href="https://www.google.com/maps?vet=10CAAQoqAOahcKEwiY-PWw26CVAxUAAAAAHQAAAAAQBg..i&sca_esv=f4c500ed9085b262&pvq=Cg0vZy8xMWNuMXNjOHByIkQKPuGDk-GDmOGDneGDnOGDmOGDoeGDlCDhg6bhg5Xhg5jhg5zhg5jhg6Eg4YOb4YOQ4YOm4YOQ4YOW4YOY4YOQEAIYAw&lqi=Cj7hg5Phg5jhg53hg5zhg5jhg6Hhg5Qg4YOm4YOV4YOY4YOc4YOY4YOhIOGDm-GDkOGDpuGDkOGDluGDmOGDkEi3xZac0KuAgAhaTBAAEAEQAhgAGAEYAiI-4YOT4YOY4YOd4YOc4YOY4YOh4YOUIOGDpuGDleGDmOGDnOGDmOGDoSDhg5vhg5Dhg6bhg5Dhg5bhg5jhg5CSAQp3aW5lX3N0b3Jl&fvr=1&cs=1&um=1&ie=UTF-8&fb=1&gl=ge&sa=X&ftid=0x40440cef9d3f5125:0x1258e6cd7ecf7930" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{ color: '#800020', fontWeight: 'bold', textDecoration: 'underline' }}
+              >
+                1) Dionysus Wine Bar & Shop
+              </a>
+            </li>
+            <li>
+              <a 
+                href="https://www.google.com/maps?vet=10CAAQoqAOahcKEwiIi8PS26CVAxUAAAAAHQAAAAAQDw..i&pvq=Cg0vZy8xMWh6OHJjaDE4&fvr=1&cs=1&um=1&ie=UTF-8&fb=1&gl=ge&sa=X&ftid=0x40440dd8d70b3e3f:0xca94d8137380e801" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{ color: '#800020', fontWeight: 'bold', textDecoration: 'underline' }}
+              >
+                2) Wine Not?
+              </a>
+            </li>
+          </ul>
+        </footer>
+      </body>
+    </html>
+  );
+}
