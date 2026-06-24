@@ -3,245 +3,6 @@ import './globals.css';
 
 const BASE_URL = 'https://www.burkiashviliwinecellar.ge';
 
-export const metadata: Metadata = {
-  metadataBase: new URL(BASE_URL),
-
-  // ── Title ──────────────────────────────────────────────────────────────────
-  title: {
-    default: 'Burkiashvili Wine Cellar | Georgian Qvevri Wine',
-    template: '%s | Burkiashvili Wine Cellar',
-  },
-
-  // ── Description (multilingual hint — Google picks by user locale) ──────────
-  description:
-    'Burkiashvili Wine Cellar — authentic Georgian wine crafted in traditional qvevri clay vessels. Handcrafted Saperavi & Rkatsiteli from Kakheti, Georgia. Coming soon to stores near you.',
-
-  // ── Keywords ───────────────────────────────────────────────────────────────
-  keywords: [
-    // ── Brand ────────────────────────────────────────────────────────────────
-    'Burkiashvili wine cellar',
-    'Burkiashvili winery',
-    'ბურკიაშვილი ღვინის მარანი',
-
-    // ── Core product ─────────────────────────────────────────────────────────
-    'Georgian wine',
-    'qvevri wine',
-    'kvevri wine',
-    'amber wine',
-    'orange wine',
-    'natural wine Georgia',
-    'skin contact wine',
-    'ancestral wine',
-    'ancient wine',
-    'clay vessel wine',
-    'amphora wine',
-
-    // ── Grape varieties ───────────────────────────────────────────────────────
-    'Saperavi',
-    'Rkatsiteli',
-    'Mtsvane',
-    'Kisi',
-    'Chinuri',
-    'Tavkveri',
-    'Georgian red wine',
-    'Georgian white wine',
-    'Georgian amber wine',
-
-    // ── Region ────────────────────────────────────────────────────────────────
-    'Kakheti wine',
-    'Kakheti winery',
-    'Alazani valley wine',
-    'Telavi wine',
-    'Sighnaghi wine',
-    'Georgian wine region',
-
-    // ── Commercial intent ─────────────────────────────────────────────────────
-    'buy Georgian wine',
-    'Georgian wine online',
-    'Georgian wine shop',
-    'Georgian wine delivery',
-    'order Georgian wine',
-    'Georgian wine for sale',
-    'where to buy Georgian wine',
-    'Georgian wine store',
-    'Georgian wine export',
-    'Georgian wine import',
-
-    // ── Wine cellar / marani ──────────────────────────────────────────────────
-    'Georgian wine cellar',
-    'wine marani',
-    'traditional wine cellar',
-    'qvevri winemaking',
-    'qvevri winery visit',
-    'Georgian winery tour',
-
-    // ── Tourism / experience ──────────────────────────────────────────────────
-    'Georgian wine tourism',
-    'wine tasting Georgia',
-    'wine tour Kakheti',
-    'wine route Georgia',
-    'Georgia wine country',
-    'visit Georgian winery',
-
-    // ── Culture / editorial ───────────────────────────────────────────────────
-    'oldest wine in the world',
-    '8000 years of wine',
-    'UNESCO wine heritage Georgia',
-    'traditional Georgian winemaking',
-    'biodynamic Georgian wine',
-    'organic Georgian wine',
-    'small batch Georgian wine',
-    'family winery Georgia',
-
-    // ── Georgian (ქართული) ────────────────────────────────────────────────────
-    'ქართული ღვინო',
-    'კახური ღვინო',
-    'ქვევრის ღვინო',
-    'ღვინის მარანი',
-    'სამარანო',
-    'ბუნებრივი ღვინო',
-    'ქართული ღვინო ყიდვა',
-    'საფერავი',
-    'რქაწითელი',
-    'მწვანე ყურძენი',
-
-    // ── Russian (Русский) ─────────────────────────────────────────────────────
-    'грузинское вино',
-    'вино в квеври',
-    'купить грузинское вино',
-    'натуральное грузинское вино',
-    'саперави вино',
-    'ркацители вино',
-    'грузинский винный погреб',
-    'вино из Кахетии',
-    'грузинское вино онлайн',
-  ],
-
-  // ── Canonical & Alternates ─────────────────────────────────────────────────
-  alternates: {
-    canonical: BASE_URL,
-    languages: {
-      'ka':    BASE_URL + '?lang=ka',
-      'en':    BASE_URL + '?lang=en',
-      'ru':    BASE_URL + '?lang=ru',
-      'x-default': BASE_URL,
-    },
-  },
-
-  // ── Open Graph ─────────────────────────────────────────────────────────────
-  openGraph: {
-    type: 'website',
-    url: BASE_URL,
-    siteName: 'Burkiashvili Wine Cellar',
-    title: 'Burkiashvili Wine Cellar | Georgian Qvevri Wine',
-    description:
-      'Handcrafted Georgian wine made in traditional qvevri clay vessels. Saperavi & Rkatsiteli from the heart of Kakheti.',
-    locale: 'ka_GE',
-    alternateLocale: ['en_US', 'ru_RU'],
-    images: [
-      {
-        url: '/og-image.jpg',      // place a 1200×630 image in /public/og-image.jpg
-        width: 1200,
-        height: 630,
-        alt: 'Burkiashvili Wine Cellar — Georgian Qvevri Wine',
-      },
-    ],
-  },
-
-  // ── Twitter / X Card ───────────────────────────────────────────────────────
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Burkiashvili Wine Cellar | Georgian Qvevri Wine',
-    description:
-      'Authentic Georgian wine from traditional qvevri clay vessels. Saperavi, Rkatsiteli & more from Kakheti.',
-    images: ['/og-image.jpg'],
-  },
-
-  // ── Robots ─────────────────────────────────────────────────────────────────
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-
-  // ── Icons ──────────────────────────────────────────────────────────────────
-  icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png',  // place 180×180 in /public/
-  },
-
-  // ── Verification (add your real codes when ready) ──────────────────────────
-  verification: {
-    google: 'REPLACE_WITH_GOOGLE_SEARCH_CONSOLE_CODE',
-    // yandex: 'REPLACE_WITH_YANDEX_CODE',  // useful for Russian audience
-  },
-};
-
-// ── JSON-LD Structured Data ──────────────────────────────────────────────────
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'LocalBusiness',
-      '@id': BASE_URL + '/#business',
-      name: 'Burkiashvili Wine Cellar',
-      url: BASE_URL,
-      description:
-        'Traditional Georgian winery producing qvevri wines including Saperavi and Rkatsiteli from Kakheti region.',
-      address: {
-        '@type': 'PostalAddress',
-        addressCountry: 'GE',
-      },
-      knowsAbout: [
-        'Georgian wine',
-        'Qvevri winemaking',
-        'Saperavi',
-        'Rkatsiteli',
-        'Natural wine',
-        'Amber wine',
-        'Kakheti wine region',
-      ],
-      sameAs: [
-        // Add your social profile URLs here when ready:
-        // 'https://www.facebook.com/burkiashviliwinecellar',
-        // 'https://www.instagram.com/burkiashviliwinecellar',
-      ],
-    },
-    {
-      '@type': 'WebSite',
-      '@id': BASE_URL + '/#website',
-      url: BASE_URL,
-      name: 'Burkiashvili Wine Cellar',
-      inLanguage: ['ka', 'en', 'ru'],
-      publisher: { '@id': BASE_URL + '/#business' },
-    },
-  ],
-};
-
-// ── Root Layout ──────────────────────────────────────────────────────────────
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="ka">
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </head>
-      <body>{children}</body>
-    </html>
-  );
-}
-import type { Metadata } from 'next';
-import './globals.css';
-
-const BASE_URL = 'https://www.burkiashviliwinecellar.ge';
-
 const SEO = {
   title: 'Burkiashvili Wine Cellar | Georgian Qvevri Wine',
   ogTitle: 'Burkiashvili Wine Cellar | Georgian Qvevri Wine',
@@ -267,11 +28,17 @@ export const metadata: Metadata = {
     'ბურკიაშვილი ღვინის მარანი',
     'Georgian wine',
     'qvevri wine',
+    'kvevri wine',
+    'amber wine',
+    'orange wine',
+    'natural wine Georgia',
     'Saperavi',
     'Rkatsiteli',
     'Kisi',
+    'Kakheti wine',
     'ქართული ღვინო',
     'ქვევრის ღვინო',
+    'ღვინის მარანი',
     'грузинское вино',
     'вино в квеври',
   ],
@@ -326,6 +93,7 @@ export const metadata: Metadata = {
   },
 };
 
+// ── JSON-LD Structured Data ──────────────────────────────────────────────────
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -340,7 +108,7 @@ const jsonLd = {
         '@type': 'PostalAddress',
         addressCountry: 'GE',
       },
-      knowsAbout: ['Georgian wine', 'Qvevri winemaking', 'Saperavi', 'Rkatsiteli'],
+      knowsAbout: ['Georgian wine', 'Qvevri winemaking', 'Saperavi', 'Rkatsiteli', 'Kisi'],
     },
     {
       '@type': 'WebSite',
@@ -353,6 +121,7 @@ const jsonLd = {
   ],
 };
 
+// ── Root Layout ──────────────────────────────────────────────────────────────
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ka">
@@ -365,12 +134,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <main>{children}</main>
 
+        {/* Combined Footer Component */}
         <footer style={{ padding: '2.5rem 1rem', textAlign: 'center', borderTop: '1px solid #eaeaea', marginTop: '3rem' }}>
           <h3 style={{ marginBottom: '1.2rem', color: '#333' }}>Our Wine is Available Here:</h3>
           <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '14px', alignItems: 'center' }}>
             <li>
               <a 
-                href="https://www.google.com/maps?vet=10CAAQoqAOahcKEwiY-PWw26CVAxUAAAAAHQAAAAAQBg..i&sca_esv=f4c500ed9085b262&pvq=Cg0vZy8xMWNuMXNjOHByIkQKPuGDk-GDmOGDneGDnOGDmOGDoeGDlCDhg6bhg5Xhg5jhg5zhg5jhg6Eg4YOb4YOQ4YOm4YOQ4YOW4YOY4YOQEAIYAw&lqi=Cj7hg5Phg5jhg53hg5zhg5jhg6Hhg5Qg4YOm4YOV4YOY4YOc4YOY4YOhIOGDm-GDkOGDpuGDkOGDluGDmOGDkEi3xZac0KuAgAhaTBAAEAEQAhgAGAEYAiI-4YOT4YOY4YOd4YOc4YOY4YOh4YOUIOGDpuGDleGDmOGDnOGDmOGDoSDhg5vhg5Dhg6bhg5Dhg5bhg5jhg5CSAQp3aW5lX3N0b3Jl&fvr=1&cs=1&um=1&ie=UTF-8&fb=1&gl=ge&sa=X&ftid=0x40440cef9d3f5125:0x1258e6cd7ecf7930" 
+                href="https://www.google.com/maps/place/Dionysus+Wine+Bar+%26+Shop/@41.695547,44.802638,17z" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 style={{ color: '#800020', fontWeight: 'bold', textDecoration: 'underline' }}
@@ -380,7 +150,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </li>
             <li>
               <a 
-                href="https://www.google.com/maps?vet=10CAAQoqAOahcKEwiIi8PS26CVAxUAAAAAHQAAAAAQDw..i&pvq=Cg0vZy8xMWh6OHJjaDE4&fvr=1&cs=1&um=1&ie=UTF-8&fb=1&gl=ge&sa=X&ftid=0x40440dd8d70b3e3f:0xca94d8137380e801" 
+                href="https://www.google.com/maps/place/Wine+Not%3F/@41.708030,44.781162,17z" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 style={{ color: '#800020', fontWeight: 'bold', textDecoration: 'underline' }}
