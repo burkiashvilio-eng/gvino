@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import './globals.css';
 
 const BASE_URL = 'https://www.burkiashviliwinecellar.ge';
@@ -245,76 +246,39 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body>{children}</body>
-    </html>
-  );
-}
-── Icons ──────────────────────────────────────────────────────────────────
-  icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png', // 180×180 in /public/
-  },
+      <body>
+        
+        {/* Your primary page content */}
+        <main>{children}</main>
 
-  // ── Verification (add your real codes when ready) ──────────────────────────
-  verification: {
-    google: 'REPLACE_WITH_GOOGLE_SEARCH_CONSOLE_CODE',
-    // yandex: 'REPLACE_WITH_YANDEX_CODE',  // useful for Russian audience
-  },
-};
+        {/* ── Where To Buy Shops Section ───────────────────────────────────── */}
+        <footer style={{ padding: '2.5rem 1rem', textAlign: 'center', borderTop: '1px solid #eaeaea', marginTop: '3rem' }}>
+          <h3 style={{ marginBottom: '1.2rem', color: '#333', fontFamily: 'inherit' }}>Our Wine is Available Here:</h3>
+          <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '14px', alignItems: 'center' }}>
+            <li>
+              <Link 
+                href="https://www.google.com/maps?vet=10CAAQoqAOahcKEwiY-PWw26CVAxUAAAAAHQAAAAAQBg..i&sca_esv=f4c500ed9085b262&pvq=Cg0vZy8xMWNuMXNjOHByIkQKPuGDk-GDmOGDneGDnOGDmOGDoeGDlCDhg6bhg5Xhg5jhg5zhg5jhg6Eg4YOb4YOQ4YOm4YOQ4YOW4YOY4YOQEAIYAw&lqi=Cj7hg5Phg5jhg53hg5zhg5jhg6Hhg5Qg4YOm4YOV4YOY4YOc4YOY4YOhIOGDm-GDkOGDpuGDkOGDluGDmOGDkEi3xZac0KuAgAhaTBAAEAEQAhgAGAEYAiI-4YOT4YOY4YOd4YOc4YOY4YOh4YOUIOGDpuGDleGDmOGDnOGDmOGDoSDhg5vhg5Dhg6bhg5Dhg5bhg5jhg5CSAQp3aW5lX3N0b3Jl&fvr=1&cs=1&um=1&ie=UTF-8&fb=1&gl=ge&sa=X&ftid=0x40440cef9d3f5125:0x1258e6cd7ecf7930" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{ color: '#800020', fontWeight: 'bold', textDecoration: 'underline' }}
+              >
+                1) Dionysus Wine Bar & Shop
+              </Link>
+            </li>
+            <li>
+              <Link 
+                href="https://www.google.com/maps?vet=10CAAQoqAOahcKEwiIi8PS26CVAxUAAAAAHQAAAAAQDw..i&pvq=Cg0vZy8xMWh6OHJjaDE4&fvr=1&cs=1&um=1&ie=UTF-8&fb=1&gl=ge&sa=X&ftid=0x40440dd8d70b3e3f:0xca94d8137380e801" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{ color: '#800020', fontWeight: 'bold', textDecoration: 'underline' }}
+              >
+                2) Wine Not?
+              </Link>
+            </li>
+          </ul>
+        </footer>
 
-// ── JSON-LD Structured Data ──────────────────────────────────────────────────
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'LocalBusiness',
-      '@id': BASE_URL + '/#business',
-      name: 'Burkiashvili Wine Cellar',
-      url: BASE_URL,
-      image: BASE_URL + SEO.ogImage,
-      description:
-        'Traditional Georgian winery producing qvevri wines including Saperavi and Rkatsiteli from Kakheti region.',
-      address: {
-        '@type': 'PostalAddress',
-        addressCountry: 'GE',
-      },
-      knowsAbout: [
-        'Georgian wine',
-        'Qvevri winemaking',
-        'Saperavi',
-        'Rkatsiteli',
-        'Natural wine',
-        'Amber wine',
-        'Kakheti wine region',
-      ],
-      sameAs: [
-        // Add your social profile URLs here when ready:
-        // 'https://www.facebook.com/burkiashviliwinecellar',
-        // 'https://www.instagram.com/burkiashviliwinecellar',
-      ],
-    },
-    {
-      '@type': 'WebSite',
-      '@id': BASE_URL + '/#website',
-      url: BASE_URL,
-      name: 'Burkiashvili Wine Cellar',
-      inLanguage: ['ka', 'en', 'ru'],
-      publisher: { '@id': BASE_URL + '/#business' },
-    },
-  ],
-};
-
-// ── Root Layout ──────────────────────────────────────────────────────────────
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="ka">
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </head>
-      <body>{children}</body>
+      </body>
     </html>
   );
 }
