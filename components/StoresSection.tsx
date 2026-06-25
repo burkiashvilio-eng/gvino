@@ -7,14 +7,10 @@ interface Props {
 
 interface WineShop {
   name: string;
+  address: { en: string; ka: string; ru: string };
+  lat: number;
+  lng: number;
   googleMapsUrl: string;
-  appleMapsUrl: string;
-  // If the address changes per language, you can make this an object like your translations
-  address: {
-    en: string;
-    ka?: string; // Add keys based on what your Lang type supports (e.g., 'ka', 'ru')
-    [key: string]: string | undefined;
-  };
 }
 
 const wineShops: WineShop[] = [
@@ -22,57 +18,67 @@ const wineShops: WineShop[] = [
     name: "Dionysus Wine Bar & Shop",
     address: {
       en: "25 Aleksandr Pushkin St, Tbilisi",
-      ka: "ალექსანდრე პუშკინის ქ. 25, თბილისი"
+      ka: "ალექსანდრე პუშკინის ქ. 25, თბილისი",
+      ru: "ул. Пушкина 25, Тбилиси",
     },
-    googleMapsUrl: "https://www.google.com/maps/place/Dionysus+Wine+Bar+%26+Shop/@41.6955364,44.802613,17z",
-    appleMapsUrl: "https://maps.apple.com/?q=41.695547,44.802638"
+    lat: 41.695547,
+    lng: 44.802638,
+    googleMapsUrl: "https://www.google.com/maps?q=Dionysus+Wine+Bar+%26+Shop&ftid=0x40440cef9d3f5125:0x1258e6cd7ecf7930",
   },
   {
     name: "Wine Not?",
     address: {
       en: "6 Vasil Petriashvili St, Tbilisi",
-      ka: "ვასილ პეტრიაშვილის ქ. 6, თბილისი"
+      ka: "ვასილ პეტრიაშვილის ქ. 6, თბილისი",
+      ru: "ул. В. Петриашвили 6, Тбилиси",
     },
-    googleMapsUrl: "https://www.google.com/maps/place/Wine+Not%3F/@41.7080649,44.7811463,17z",
-    appleMapsUrl: "https://maps.apple.com/?q=41.708030,44.781162"
-  }
+    lat: 41.708030,
+    lng: 44.781162,
+    googleMapsUrl: "https://www.google.com/maps?q=Wine+Not%3F&ftid=0x40440dd8d70b3e3f:0xca94d8137380e801",
+  },
 ];
 
 export default function StoresSection({ lang }: Props) {
   return (
     <div className="stores-section">
       <div className="stores-label">{translations.storesLabel[lang]}</div>
-      
-      {/* Grid container to display both shop cards cleanly side-by-side or stacked on mobile */}
-      <div className="grid md:grid-cols-2 gap-6 mt-4">
-        {wineShops.map((shop, index) => (
-          <div key={index} className="card flex flex-col justify-between p-6">
-            <div>
-              <div className="card-title text-xl font-semibold mb-2">{shop.name}</div>
-              <p className="card-text text-neutral-600 text-sm mb-6">
-                {shop.address[lang] || shop.address.en}
-              </p>
+
+      <div className="shop-list">
+        {wineShops.map((shop, i) => (
+          <div key={i} className="shop-card">
+
+            {/* Info — left side */}
+            <div className="shop-card-info">
+              <div className="shop-card-name">{shop.name}</div>
+              <div className="shop-card-address">
+                <svg width="11" height="14" viewBox="0 0 12 15" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+                  <path d="M6 1C3.79 1 2 2.79 2 5c0 3.5 4 9 4 9s4-5.5 4-9c0-2.21-1.79-4-4-4z" />
+                  <circle cx="6" cy="5" r="1.5" />
+                </svg>
+                <span>{shop.address[lang] ?? shop.address.en}</span>
+              </div>
             </div>
-            
-            {/* Map Interaction Buttons */}
-            <div className="flex gap-3 mt-auto">
-              <Link
-                href={shop.googleMapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 text-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg text-sm transition-colors"
-              >
-                Google Maps
-              </Link>
-              <Link
-                href={shop.appleMapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 text-center bg-neutral-900 hover:bg-neutral-800 text-white font-medium py-2 px-4 rounded-lg text-sm transition-colors"
-              >
-                Apple Maps
-              </Link>
-            </div>
+
+            {/* Map thumbnail — right side, whole area is a link */}
+            <Link
+              href={shop.googleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shop-map-wrap"
+              aria-label={`Open ${shop.name} in Google Maps`}
+            >
+              <iframe
+                src={`https://maps.google.com/maps?q=${shop.lat},${shop.lng}&z=16&output=embed`}
+                className="shop-map-iframe"
+                loading="lazy"
+                title={shop.name}
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+              <div className="shop-map-overlay">
+                <span className="shop-map-label">{translations.viewOnMap[lang]}</span>
+              </div>
+            </Link>
+
           </div>
         ))}
       </div>
