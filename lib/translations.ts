@@ -26,6 +26,11 @@ export const translations = {
     en: 'our wine will be published very soon',
     ru: 'наше вино, скоро будет опубликован',
   },
+  viewOnMap: {
+    ka: 'ნახე რუქაზე →',
+    en: 'View on map →',
+    ru: 'Смотреть на карте →',
+  },
 } as const;
 
 export const LANGUAGES: Lang[] = ['ka', 'en', 'ru'];

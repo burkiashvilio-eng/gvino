@@ -133,33 +133,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <main>{children}</main>
-
-        {/* Combined Footer Component */}
-        <footer style={{ padding: '2.5rem 1rem', textAlign: 'center', borderTop: '1px solid #eaeaea', marginTop: '3rem' }}>
-          <h3 style={{ marginBottom: '1.2rem', color: '#333' }}>Our Wine is Available Here:</h3>
-          <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '14px', alignItems: 'center' }}>
-            <li>
-              <a 
-                href="https://www.google.com/maps/place/Dionysus+Wine+Bar+%26+Shop/@41.695547,44.802638,17z" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                style={{ color: '#800020', fontWeight: 'bold', textDecoration: 'underline' }}
-              >
-                1) Dionysus Wine Bar & Shop
-              </a>
-            </li>
-            <li>
-              <a 
-                href="https://www.google.com/maps/place/Wine+Not%3F/@41.708030,44.781162,17z" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                style={{ color: '#800020', fontWeight: 'bold', textDecoration: 'underline' }}
-              >
-                2) Wine Not?
-              </a>
-            </li>
-          </ul>
-        </footer>
       </body>
     </html>
   );
