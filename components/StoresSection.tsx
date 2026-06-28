@@ -1,10 +1,8 @@
 import Link from 'next/link';
 import { Lang, translations } from '@/lib/translations';
-
 interface Props {
   lang: Lang;
 }
-
 interface WineShop {
   name: string;
   address: { en: string; ka: string; ru: string };
@@ -12,7 +10,6 @@ interface WineShop {
   lng: number;
   googleMapsUrl: string;
 }
-
 const wineShops: WineShop[] = [
   {
     name: "Dionysus Wine Bar & Shop",
@@ -36,17 +33,25 @@ const wineShops: WineShop[] = [
     lng: 44.781162,
     googleMapsUrl: "https://www.google.com/maps?q=Wine+Not%3F&ftid=0x40440dd8d70b3e3f:0xca94d8137380e801",
   },
+  {
+    name: "Wine Tower",
+    address: {
+      en: "1 Jan Shardeni St, Tbilisi",
+      ka: "იან შარდენის ქ. 1, თბილისი",
+      ru: "ул. Жана Шардена 1, Тбилиси",
+    },
+    lat: 41.690604,
+    lng: 44.807874,
+    googleMapsUrl: "https://www.google.com/maps/place/wine+tower/data=!4m2!3m1!1s0x40440dc67c32393b:0xf099d8419b60cadd?sa=X&ved=1t:242&ictx=111",
+  },
 ];
-
 export default function StoresSection({ lang }: Props) {
   return (
     <div className="stores-section">
       <div className="stores-label">{translations.storesLabel[lang]}</div>
-
       <div className="shop-list">
         {wineShops.map((shop, i) => (
           <div key={i} className="shop-card">
-
             {/* Info — left side */}
             <div className="shop-card-info">
               <div className="shop-card-name">{shop.name}</div>
@@ -58,7 +63,6 @@ export default function StoresSection({ lang }: Props) {
                 <span>{shop.address[lang] ?? shop.address.en}</span>
               </div>
             </div>
-
             {/* Map thumbnail — right side, whole area is a link */}
             <Link
               href={shop.googleMapsUrl}
@@ -78,7 +82,6 @@ export default function StoresSection({ lang }: Props) {
                 <span className="shop-map-label">{translations.viewOnMap[lang]}</span>
               </div>
             </Link>
-
           </div>
         ))}
       </div>
