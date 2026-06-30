@@ -1,8 +1,10 @@
 import Link from 'next/link';
 import { Lang, translations } from '@/lib/translations';
+
 interface Props {
   lang: Lang;
 }
+
 interface WineShop {
   name: string;
   address: { en: string; ka: string; ru: string };
@@ -10,6 +12,7 @@ interface WineShop {
   lng: number;
   googleMapsUrl: string;
 }
+
 const wineShops: WineShop[] = [
   {
     name: "Dionysus Wine Bar & Shop",
@@ -44,7 +47,19 @@ const wineShops: WineShop[] = [
     lng: 44.807874,
     googleMapsUrl: "https://www.google.com/maps/place/wine+tower/data=!4m2!3m1!1s0x40440dc67c32393b:0xf099d8419b60cadd?sa=X&ved=1t:242&ictx=111",
   },
+  {
+    name: "Wine Effect • ღვინის ეფექტი",
+    address: {
+      en: "16 Irakli Abashidze St, Tbilisi",
+      ka: "ირაკლი აბაშიძის ქ. 16, თბილისი",
+      ru: "ул. Ираклия Абашидзе 16, Тбилиси",
+    },
+    lat: 41.708761,
+    lng: 44.767931,
+    googleMapsUrl: "https://www.google.com/maps?q=Wine+Effect+%E2%80%A2+%E1%83%A6%E1%83%95%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1+%E1%83%94%E1%83%A4%E1%83%94%E1%83%A5%E1%83%A2%E1%83%98&ftid=0x40440de5be5b9fe5:0xd3bd9af1db927256",
+  },
 ];
+
 export default function StoresSection({ lang }: Props) {
   return (
     <div className="stores-section">
