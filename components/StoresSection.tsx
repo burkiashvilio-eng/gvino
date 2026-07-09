@@ -54,9 +54,9 @@ const wineShops: WineShop[] = [
       ka: "ირაკლი აბაშიძის ქ. 16, თბილისი",
       ru: "ул. Ираклия Абашидзе 16, Тбилиси",
     },
-    lat: 41.708761,
-    lng: 44.767931,
-    googleMapsUrl: "https://maps.google.com/?q=41.708761,44.767931",
+    lat: 41.707061,
+    lng: 44.770958,
+    googleMapsUrl: "https://www.google.com/maps/place/Wine+Effect+%E2%80%A2+%E1%83%A6%E1%83%95%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1+%E1%83%94%E1%83%A4%E1%83%94%E1%83%A5%E1%83%A2%E1%83%98/@41.7070611,44.7709581,17z/",
   },
 ];
 
