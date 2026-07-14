@@ -56,7 +56,7 @@ const wineShops: WineShop[] = [
     },
     lat: 41.707061,
     lng: 44.770958,
-    googleMapsUrl: "https://www.google.com/maps/place/Wine+Effect+%E2%80%A2+%E1%83%A6%E1%83%95%E1%83%98%E1%83%9C%E1%83%98%E1%83%A1+%E1%83%94%E1%83%A4%E1%83%94%E1%83%A5%E1%83%A2%E1%83%98/@41.7070611,44.7709581,17z/",
+    googleMapsUrl: "https://google.com/maps/place/wine+effect+tbilisi/data=!4m2!3m1!1s0x40440d1abe5b9fe5:0xd2fd9af1db8f7256?sa=X&ved=1t:242&ictx=111",
   },
 ];
 
