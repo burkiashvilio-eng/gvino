@@ -23,7 +23,7 @@ const wineShops: WineShop[] = [
     },
     lat: 41.695547,
     lng: 44.802638,
-    googleMapsUrl: "https://maps.google.com/?q=41.695547,44.802638",
+    googleMapsUrl: "https://www.google.com/maps?q=Dionysus+Wine+Bar+%26+Shop&ftid=0x40440cef9d3f5125:0x1258e6cd7ecf7930",
   },
   {
     name: "Wine Not?",
@@ -34,7 +34,7 @@ const wineShops: WineShop[] = [
     },
     lat: 41.708030,
     lng: 44.781162,
-    googleMapsUrl: "https://maps.google.com/?q=41.708030,44.781162",
+    googleMapsUrl: "https://www.google.com/maps?q=Wine+Not%3F&ftid=0x40440dd8d70b3e3f:0xca94d8137380e801",
   },
   {
     name: "Wine Tower",
@@ -45,7 +45,7 @@ const wineShops: WineShop[] = [
     },
     lat: 41.690604,
     lng: 44.807874,
-    googleMapsUrl: "https://maps.google.com/?q=41.690604,44.807874",
+    googleMapsUrl: "https://www.google.com/maps?q=Wine+Tower&ftid=0x40440dc67c32393b:0xf099d8419b60cadd",
   },
   {
     name: "Wine Effect • ღვინის ეფექტი",
@@ -56,7 +56,7 @@ const wineShops: WineShop[] = [
     },
     lat: 41.707061,
     lng: 44.770958,
-    googleMapsUrl: "https://maps.google.com/?q=41.707061,44.770958",
+    googleMapsUrl: "https://www.google.com/maps?q=Wine+Effect&ftid=0x40440d1abe5b9fe5:0xd2fd9af1db8f7256",
   },
 ];
 
