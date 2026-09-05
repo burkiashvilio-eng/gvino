@@ -58,6 +58,17 @@ const wineShops: WineShop[] = [
     lng: 44.770958,
     googleMapsUrl: "https://www.google.com/maps?q=Wine+Effect&ftid=0x40440d1abe5b9fe5:0xd2fd9af1db8f7256",
   },
+  {
+    name: "Wine Bridge",
+    address: {
+      en: "Tbilisi, Georgia",
+      ka: "თბილისი, საქართველო",
+      ru: "Тбилиси, Грузия",
+    },
+    lat: 41.7001436,
+    lng: 44.8026606,
+    googleMapsUrl: "https://www.google.com/maps/place/Wine+bridge/@41.7001436,44.8000857,849m/data=!3m2!1e3!4b1!4m6!3m5!1s0x40440d51beef6bef:0x37482a16aa235da2!8m2!3d41.7001436!4d44.8026606!16s%2Fg%2F11k56qzt2m",
+  },
 ];
 
 export default function StoresSection({ lang }: Props) {
