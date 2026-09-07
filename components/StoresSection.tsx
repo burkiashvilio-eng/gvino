@@ -5,7 +5,7 @@ interface Props {
   lang: Lang;
 }
 
-interface WineShop {
+interface Place {
   name: string;
   address: { en: string; ka: string; ru: string };
   lat: number;
@@ -13,7 +13,7 @@ interface WineShop {
   googleMapsUrl: string;
 }
 
-const wineShops: WineShop[] = [
+const wineShops: Place[] = [
   {
     name: "Dionysus Wine Bar & Shop",
     address: {
@@ -41,7 +41,7 @@ const wineShops: WineShop[] = [
     address: {
       en: "1 Jan Shardeni St, Tbilisi",
       ka: "იან შარდენის ქ. 1, თბილისი",
-      ru: "ул. Жана Шардена 1, Тбилиси",
+      ru: "ул. Жანა Шардена 1, Тбилиси",
     },
     lat: 41.690604,
     lng: 44.807874,
@@ -71,46 +71,93 @@ const wineShops: WineShop[] = [
   },
 ];
 
-export default function StoresSection({ lang }: Props) {
+const restaurants: Place[] = [
+  {
+    name: "Veriko",
+    address: {
+      en: "1 Vasil Petriashvili St, Tbilisi",
+      ka: "ვასილ პეტრიაშვილის ქ. 1, თბილისი",
+      ru: "ул. В. Петриашвили 1, Тбилиси",
+    },
+    lat: 41.708848,
+    lng: 44.781603,
+    googleMapsUrl: "https://www.google.com/maps/place/veriko/data=!4m2!3m1!1s0x40440d419b6ce127:0xd044613fc6697643",
+  },
+  {
+    name: "Lazy",
+    address: {
+      en: "64 Ilia Chavchavadze Ave, Tbilisi",
+      ka: "ილია ჭავჭავაძის გამზ. 64, თბილისი",
+      ru: "пр. Илии Чавчавадзе 64, Тбилиси",
+    },
+    lat: 41.7106514,
+    lng: 44.7587682,
+    googleMapsUrl: "https://www.google.com/maps/place/Lazy/@41.7106514,44.7561933,650m/data=!3m2!1e3!4b1!4m6!3m5!1s0x40447376e3dc8d1b:0x55be1486ed13613c!8m2!3d41.7106514!4d44.7587682!16s%2Fg%2F11vbj9ql11",
+  },
+];
+
+/* Reusable card list component */
+function PlacesList({ items, label, lang }: { items: Place[]; label: string; lang: Lang }) {
   return (
-    <div className="stores-section">
-      <div className="stores-label">{translations.storesLabel[lang]}</div>
-      <div className="shop-list">
-        {wineShops.map((shop, i) => (
-          <div key={i} className="shop-card">
-            {/* Info — left side */}
-            <div className="shop-card-info">
-              <div className="shop-card-name">{shop.name}</div>
-              <div className="shop-card-address">
+    <div className="section-container">
+      <div className="section-label">{label}</div>
+      <div className="places-list">
+        {items.map((item, i) => (
+          <div key={i} className="place-card">
+            <div className="place-card-info">
+              <div className="place-card-name">{item.name}</div>
+              <div className="place-card-address">
                 <svg width="11" height="14" viewBox="0 0 12 15" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
                   <path d="M6 1C3.79 1 2 2.79 2 5c0 3.5 4 9 4 9s4-5.5 4-9c0-2.21-1.79-4-4-4z" />
                   <circle cx="6" cy="5" r="1.5" />
                 </svg>
-                <span>{shop.address[lang] ?? shop.address.en}</span>
+                <span>{item.address[lang] ?? item.address.en}</span>
               </div>
             </div>
-            {/* Map thumbnail — right side, whole area is a link */}
             <Link
-              href={shop.googleMapsUrl}
+              href={item.googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="shop-map-wrap"
-              aria-label={`Open ${shop.name} in Google Maps`}
+              className="place-map-wrap"
+              aria-label={`Open ${item.name} in Google Maps`}
             >
               <iframe
-                src={`https://maps.google.com/maps?q=${shop.lat},${shop.lng}&z=16&output=embed`}
-                className="shop-map-iframe"
+                src={`https://maps.google.com/maps?q=${item.lat},${item.lng}&z=16&output=embed`}
+                className="place-map-iframe"
                 loading="lazy"
-                title={shop.name}
+                title={item.name}
                 referrerPolicy="no-referrer-when-downgrade"
               />
-              <div className="shop-map-overlay">
-                <span className="shop-map-label">{translations.viewOnMap[lang]}</span>
+              <div className="place-map-overlay">
+                <span className="place-map-label">{translations.viewOnMap[lang]}</span>
               </div>
             </Link>
           </div>
         ))}
       </div>
+    </div>
+  );
+}
+
+/* Individual exported components */
+export function StoresSection({ lang }: Props) {
+  return <PlacesList items={wineShops} label={translations.storesLabel[lang]} lang={lang} />;
+}
+
+export function RestaurantsSection({ lang }: Props) {
+  return <PlacesList items={restaurants} label={translations.restaurantsLabel?.[lang] ?? "Restaurants"} lang={lang} />;
+}
+
+/* Combined Page Component */
+export default function Page({ lang }: Props) {
+  return (
+    <div className="page">
+      <StoresSection lang={lang} />
+      <div className="divider">
+        <span className="dl" />
+        <span className="dl r" />
+      </div>
+      <RestaurantsSection lang={lang} />
     </div>
   );
 }
