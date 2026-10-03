@@ -1,5 +1,20 @@
 import type { Metadata } from 'next';
+import { Manrope, Noto_Sans_Georgian } from 'next/font/google';
 import './globals.css';
+
+const manrope = Manrope({
+  subsets: ['latin', 'cyrillic'],
+  weight: ['300', '400', '500'],
+  variable: '--font-sans',
+  display: 'swap',
+});
+
+const georgian = Noto_Sans_Georgian({
+  subsets: ['georgian'],
+  weight: ['300', '400', '500'],
+  variable: '--font-georgian',
+  display: 'swap',
+});
 
 const BASE_URL = 'https://www.burkiashviliwinecellar.ge';
 
@@ -124,7 +139,7 @@ const jsonLd = {
 // ── Root Layout ──────────────────────────────────────────────────────────────
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ka">
+    <html lang="ka" className={`${manrope.variable} ${georgian.variable}`}>
       <head>
         <script
           type="application/ld+json"
