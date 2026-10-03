@@ -7,18 +7,28 @@ interface Props {
   onChange: (lang: Lang) => void;
 }
 
+const LANG_NAMES: Record<Lang, string> = {
+  ka: 'ქართული',
+  en: 'English',
+  ru: 'Русский',
+};
+
 export default function LanguageBar({ current, onChange }: Props) {
   return (
-    <div className="lang-bar">
+    <nav className="lang-bar" aria-label="Language">
       {LANGUAGES.map((lang) => (
         <button
           key={lang}
-          className={`lang-btn${current === lang ? ' active' : ''}`}
+          type="button"
+          lang={lang}
+          className="lang-btn"
+          aria-pressed={current === lang}
+          aria-label={LANG_NAMES[lang]}
           onClick={() => onChange(lang)}
         >
           {translations.langButton[lang]}
         </button>
       ))}
-    </div>
+    </nav>
   );
 }

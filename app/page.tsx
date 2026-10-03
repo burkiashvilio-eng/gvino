@@ -1,29 +1,42 @@
 'use client';
 
-import { useState } from 'react';
-import { Lang } from '@/lib/translations';
-import TopBar from '@/components/TopBar';
-import LanguageBar from '@/components/LanguageBar';
-import LogoCircle from '@/components/LogoCircle';
-import Divider from '@/components/Divider';
-import StoresSection from '@/components/StoresSection';
-import SocialRow from '@/components/SocialRow';
+import { useEffect, useState } from 'react';
+import { Lang, translations, countLabel } from '@/lib/translations';
+import { wineShops, restaurants } from '@/lib/places';
+import Header from '@/components/Header';
+import Hero from '@/components/Hero';
+import PlacesSection from '@/components/PlacesSection';
+import FeaturedWine from '@/components/FeaturedWine';
 import Footer from '@/components/Footer';
 
 export default function Home() {
   const [lang, setLang] = useState<Lang>('ka');
 
+  // Keep the document language in sync for screen readers and hyphenation.
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
+
   return (
-    <div className="site-wrapper">
-      <TopBar />
-      <LanguageBar current={lang} onChange={setLang} />
-      <LogoCircle />
-      <div className="spacer" />
-      <div className="page">
-        <Divider />
-        <StoresSection lang={lang} />
-        <SocialRow />
-        <Footer />
+    <div className="site">
+      <div className="container">
+        <Header lang={lang} onLangChange={setLang} />
+        <Hero lang={lang} />
+        <PlacesSection
+          id="buy"
+          lang={lang}
+          title={translations.storesLabel[lang]}
+          aside={countLabel(wineShops.length, 'shops', lang)}
+          items={wineShops}
+          footer={<FeaturedWine lang={lang} />}
+        />
+        <PlacesSection
+          lang={lang}
+          title={translations.restaurantsLabel[lang]}
+          aside={countLabel(restaurants.length, 'restaurants', lang)}
+          items={restaurants}
+        />
+        <Footer lang={lang} />
       </div>
     </div>
   );
